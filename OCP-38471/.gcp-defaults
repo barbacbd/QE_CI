@@ -1,0 +1,34 @@
+# GCP Default Configuration for OCP-38471
+# These are the default values configured for this test suite
+
+# Platform Settings
+PLATFORM=gcp
+GCP_PROJECT_ID=openshift-dev-installer
+GCP_REGION=us-west1
+GCP_ZONE=us-west1-b
+
+# Cluster Configuration
+BASE_DOMAIN=installer.gcp.devcluster.openshift.com
+CLUSTER_NAME=bbarbach-ocp-38471
+
+# Network Configuration
+NETWORK_TYPE=OVNKubernetes
+CLUSTER_NETWORK_CIDR=10.128.0.0/14
+CLUSTER_NETWORK_HOST_PREFIX=23
+MACHINE_NETWORK_CIDR=10.0.0.0/16
+SERVICE_NETWORK_CIDR=172.30.0.0/16
+
+# Credentials
+SSH_KEY=$HOME/.ssh/github_ed25519.pub
+PULL_SECRET_FILE=$HOME/secrets/pull-secrets.txt
+
+# OpenShift Installer
+OPENSHIFT_INSTALL=openshift-install
+
+# Test Directory
+WORK_DIR=/tmp/ocp-38471-test
+
+# Note: To override these defaults, either:
+# 1. Create a .env file with your custom values
+# 2. Export environment variables before running tests
+# 3. Pass variables inline when running scripts
